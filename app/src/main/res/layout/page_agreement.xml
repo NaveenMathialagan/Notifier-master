@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f4c3"
+
+    >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KFC Vellore Order"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:textSize="22dp"/>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order to be placed/cancelled before 4.30pm,orders placed/cancelled after 4.30pm will not be considered."
+        android:textSize="24dp"
+        android:textColor="#d32f2f"
+
+        android:textStyle="bold" />
+    <TextView
+        android:textColor="#d32f2f"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="We will ensure you to deliver before girls in time. "
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="15dp"
+
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="All items are priced inclusive of 20% tax, levied by the govt."
+        android:textSize="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#d32f2f"
+
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#d32f2f"
+        android:text="Call us at 9789580785 in case of any assistance required."
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="        PROCEED       "
+        android:background="#b71c1c"
+        android:textColor="#FFF"
+        android:id="@+id/agreed"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        />
+</LinearLayout>

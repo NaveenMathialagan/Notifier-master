@@ -1,0 +1,80 @@
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="100"
+    android:background="#f0f4c3"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="right"
+            >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="   CHECKOUT HERE   "
+                android:textSize="15dp"
+                android:layout_marginRight="5dp"
+                android:background="#b71c1c"
+                android:textColor="#FFF"
+
+                android:id="@+id/ORDER_BTN"
+                />
+        </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rv1"
+        android:layout_weight="90"
+        />
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:paddingBottom="10dp"
+        >
+
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d32f2f"
+            android:text="Go Back"
+            android:onClick="goback"
+            android:id="@+id/gb"
+            android:layout_marginBottom="5dp"
+            android:textColor="#9afff6f8"
+            android:layout_weight="50"
+            />
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ac"
+            android:layout_marginBottom="5dp"
+            android:background="#d32f2f"
+            android:text="Add to Cart"
+
+            android:textColor="#9afff6f8"
+            android:layout_weight="50"
+            />
+    </LinearLayout>
+
+</LinearLayout>

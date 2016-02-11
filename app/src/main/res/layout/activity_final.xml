@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f0f4c3"
+
+    >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KFC Vellore Order"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:textSize="22dp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+
+
+    <android.support.v7.widget.CardView
+        xmlns:cardview="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:id="@+id/card1"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="100">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:textColor="#d32f2f"
+        android:textSize="18dp"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="80"
+        android:text="Thanks for ordering.Your order has been placed! Your order will be delivered around 7:45 PM at the main gate! For further details contact 9789580785"
+        />
+        
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:text="   GO HOME   "
+            android:layout_weight="20"
+            android:layout_marginTop="30dp"
+            android:textColor="#FFFFFF"
+            android:background="#d32f2f"
+            android:textSize="15dp"
+            android:id="@+id/HOME_BTN"
+            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+</LinearLayout>
