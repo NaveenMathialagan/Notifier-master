@@ -7,8 +7,10 @@ package exam.vsrk.notifier.Adapters;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,10 +70,11 @@ public class GeneralAdapter extends RecyclerView.Adapter<CustomViewHolder> {
     @Override
     public void onBindViewHolder(CustomViewHolder feedListRowHolder, final int i) {
         final FeedItem feedItem = feedItemList.get(i);
-        feedListRowHolder.time.setVisibility(View.INVISIBLE);
         if (!isPackageInstalled(feedItem.getPack(), mContext)) {
+    String url="http://www.thecityshoppers.com/"+feedItem.getIcon();
             if (!TextUtils.isEmpty(feedItem.getIcon())) {
-                Picasso.with(mContext).load(feedItem.getIcon())
+                Picasso.with(mContext)
+                        .load(url)
                         .error(R.drawable.ic_launcher)
                         .placeholder(R.drawable.ic_launcher)
                         .into(feedListRowHolder.imageView);
@@ -80,12 +83,12 @@ public class GeneralAdapter extends RecyclerView.Adapter<CustomViewHolder> {
             }
             if (!TextUtils.isEmpty(feedItem.getNotification())) {
 
-                feedListRowHolder.title.setText(feedItem.getNotification());
+                feedListRowHolder.title.setText(feedItem.getDescription());
 
             } else
                 feedListRowHolder.cardView.setVisibility(View.GONE);
 
-            feedListRowHolder.pack.setText(feedItem.getAppName());
+            feedListRowHolder.pack.setText(feedItem.getNotification());
             feedListRowHolder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -103,11 +106,11 @@ public class GeneralAdapter extends RecyclerView.Adapter<CustomViewHolder> {
         else
             feedListRowHolder.cardView.setVisibility(View.GONE);
 
-
     }
 
     @Override
     public int getItemCount() {
+
         return (null != feedItemList ? feedItemList.size() : 0);
     }
     private boolean isPackageInstalled(String packagename, Context context) {

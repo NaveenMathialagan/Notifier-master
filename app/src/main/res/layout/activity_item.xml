@@ -60,7 +60,7 @@
             android:onClick="goback"
             android:id="@+id/gb"
             android:layout_marginBottom="5dp"
-            android:textColor="#9afff6f8"
+            android:textColor="#fff"
             android:layout_weight="50"
             />
         <Button
@@ -69,10 +69,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/ac"
             android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+
             android:background="#d32f2f"
             android:text="Add to Cart"
 
-            android:textColor="#9afff6f8"
+            android:textColor="#fff"
             android:layout_weight="50"
             />
     </LinearLayout>

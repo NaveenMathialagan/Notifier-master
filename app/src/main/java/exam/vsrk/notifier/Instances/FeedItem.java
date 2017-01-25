@@ -22,13 +22,7 @@ public class FeedItem {
         this.description = description;
     }
 
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
-    public String getAppName()
-    {
-        return appName;
-    }
+
     public String getIcon(){
         return icon;
     }

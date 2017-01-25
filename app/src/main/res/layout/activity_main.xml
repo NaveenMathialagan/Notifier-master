@@ -32,7 +32,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="   KFC VIT DELIVERY   "
+                android:text="   KFC VELLORE Order   "
                 android:background="#b71c1c"
                 android:textColor="#FFF"
                 android:layout_marginRight="2dp"

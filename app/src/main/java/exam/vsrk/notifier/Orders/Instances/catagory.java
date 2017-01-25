@@ -33,6 +33,7 @@ public class catagory {
 // you want to use the same images.
     public List initializeData(){
         cat = new ArrayList<catagory>();
+        cat.add(new catagory("Offers today",  R.drawable.kfc));
         cat.add(new catagory("Chicken",  R.drawable.kfc));
         cat.add(new catagory("Bucket", R.drawable.kfc));
         cat.add(new catagory("BoneLess", R.drawable.kfc));

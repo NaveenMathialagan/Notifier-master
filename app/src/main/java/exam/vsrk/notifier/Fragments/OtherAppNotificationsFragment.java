@@ -56,7 +56,7 @@ public class OtherAppNotificationsFragment extends android.support.v4.app.Fragme
         progressBar = (ProgressBar) v.findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
         swipeContainer = (SwipeRefreshLayout) v.findViewById(R.id.swipeContainer);
-        final String URL_JSON = "http://www.100words100things.in/process.php";
+        final String URL_JSON = "http://www.thecityshoppers.com/process.php";
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -79,11 +79,7 @@ public class OtherAppNotificationsFragment extends android.support.v4.app.Fragme
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
                         Log.v("RESPONSE_LOG", response);
-
-
-
                         GsonBuilder gsonBuilder = new GsonBuilder();
                         Gson gson = gsonBuilder.create();
                         Type fooType = new TypeToken<ArrayList<Post>>() {
@@ -123,10 +119,10 @@ public class OtherAppNotificationsFragment extends android.support.v4.app.Fragme
             if (post.app_type.equals("Other Apps")) {
                 FeedItem item = new FeedItem();
 
-                item.setNotification(post.description);
+
                 item.setIcon(post.logo);
-                item.setDescription(post.notification);
-                item.setAppName(post.appname);
+                item.setDescription(post.description);
+                item.setNotification(post.notification);
                 item.setPack(post.packa);
                 feedsList.add(item);
             }

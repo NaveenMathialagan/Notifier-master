@@ -54,12 +54,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
+        android:text="Your order has been placed Sucessesfully, It will be delivered at 8pm, We will contact you soon.."
         android:textColor="#d32f2f"
         android:textSize="18dp"
         android:padding="10dp"
         android:layout_marginTop="30dp"
         android:layout_weight="80"
-        android:text="Thanks for ordering.Your order has been placed! Your order will be delivered around 7:45 PM at the main gate! For further details contact 9789580785"
         />
         
         <Button

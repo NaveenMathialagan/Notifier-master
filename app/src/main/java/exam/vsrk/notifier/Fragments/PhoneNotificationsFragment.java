@@ -1,19 +1,12 @@
 package exam.vsrk.notifier.Fragments;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.github.amlcurran.showcaseview.ShowcaseView;
-import com.github.amlcurran.showcaseview.targets.Target;
 
 import java.util.List;
 
@@ -63,43 +56,7 @@ public class PhoneNotificationsFragment extends android.support.v4.app.Fragment 
 
         adapter = new PhoneNotifyAdapter(getActivity(),contacts);
         mrecyclerView.setAdapter(adapter);
-      /*  Target homeTarget = new Target() {
-            @Override
-            public Point getPoint() {
-                // Get approximate position of home icon's center
-                int actionBarSize = getSupportActionBar().getHeight();
-                int x = actionBarSize / 2;
-                int y = actionBarSize / 2;
-                return new Point(x, y);
-            }
-        };*/
-        if(isFirstTime()) {
-            new ShowcaseView.Builder(getActivity())
-
-                    .setStyle(R.style.CustomShowcaseTheme2)
-                    .setContentTitle("Instruction")
-                    .setContentText("Long click on the phone notification to delete it..")
-                    .hideOnTouchOutside()
-                    .build();
-
-
-        }
-
         return v;
-    }
-
-    private boolean isFirstTime()
-    {
-        Context mContext=null;
-        SharedPreferences preferences = this.getActivity().getPreferences(mContext.MODE_PRIVATE);
-        boolean ranBefore = preferences.getBoolean("RanBefore", false);
-        if (!ranBefore) {
-            // first time
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putBoolean("RanBefore", true);
-            editor.commit();
-        }
-        return !ranBefore;
     }
 }
 

@@ -8,7 +8,9 @@
         xmlns:cardview="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
         android:paddingTop="10dp"
         android:id="@+id/card1"
         >
@@ -30,11 +32,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
+
                     android:id="@+id/ITEM_NAME"
+                    android:text=""
                     android:textSize="22dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_gravity="left"
+                    android:layout_margin="10dp"
+
                     android:textStyle="bold"/>
 
 
@@ -50,32 +53,34 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_margin="16dp"
+
+                    android:layout_margin="10dp"
                     android:layout_weight="3"
                     android:textSize="18dp"
-                    android:layout_marginTop="20dp"
+                    android:text=""
+
                     android:id="@+id/ITEM_QTY"/>
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_margin="16dp"
+
+                    android:layout_margin="10dp"
                     android:layout_weight="4"
+                    android:text=""
                     android:id="@+id/ITEM_COST"
                     android:textSize="18dp"
-                    android:layout_marginTop="20dp"
+
                     />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:textStyle="bold"
-                    android:layout_margin="16dp"
+                    android:layout_margin="10dp"
                     android:id="@+id/delete_btn"
-                    android:layout_gravity="right"
-                    android:layout_marginTop="40dp"
+
+
                     android:textColor="#FFF"
                     android:text="  DELETE  "
                     android:background="#d32f2f"/>

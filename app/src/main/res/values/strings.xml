@@ -7,6 +7,5 @@
     <string name="title_activity_order">OrderActivity</string>
     <string name="title_activity_information">InformationActivity</string>
     <string name="title_activity_final">FinalActivity</string>
-    <string name="title_activity_cancel_order">CancelOrder</string>
 
 </resources>

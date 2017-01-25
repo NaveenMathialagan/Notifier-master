@@ -54,7 +54,7 @@ public class AroundMeFragment extends android.support.v4.app.Fragment {
         progressBar = (ProgressBar) v.findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
         swipeContainer = (SwipeRefreshLayout) v.findViewById(R.id.swipeContainer);
-        final String URL_JSON = "http://www.100words100things.in/process.php";
+        final String URL_JSON = "http://www.thecityshoppers.com/process.php";
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -96,7 +96,7 @@ public class AroundMeFragment extends android.support.v4.app.Fragment {
             public void onErrorResponse(VolleyError error) {
 
                 System.out.println("Something went wrong!");
-                Toast.makeText(getActivity(), "Check your Internet Connection", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "Check your Internet Connection", Toast.LENGTH_SHORT).show();
                 error.printStackTrace();
 
             }
@@ -122,7 +122,7 @@ public class AroundMeFragment extends android.support.v4.app.Fragment {
                 item.setNotification(post.description);
                 item.setIcon(post.logo);
                 item.setDescription(post.notification);
-                item.setAppName(post.appname);
+
                 item.setPack(post.packa);
                 feedsList.add(item);
             }

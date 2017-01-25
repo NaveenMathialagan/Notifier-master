@@ -4,6 +4,7 @@ package exam.vsrk.notifier.Orders.Activities;
  * Created by VSRK on 1/12/2016.
  */
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Point;
@@ -59,6 +60,11 @@ public class Item extends AppCompatActivity {
         rv.setLayoutManager(llm);
         List<itemsnam> items = null;
         itemsnam i = new itemsnam();
+        SharedPreferences sharedPreferences=getSharedPreferences("offer", Context.MODE_PRIVATE);
+        if (item.equals("Offers today")) {
+
+             i.offer(Item.this,cart,rv);
+        }
         if (item.equals("Chicken")) {
 
             items = i.Chicken();

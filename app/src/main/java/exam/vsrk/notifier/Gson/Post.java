@@ -12,6 +12,5 @@ public class Post {
     public String description;
     public String notification;
     public String app_type;
-    public String appname;
 
 }

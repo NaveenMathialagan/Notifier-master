@@ -38,11 +38,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="few secends ago"
+                android:text=""
                 android:id="@+id/time"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="4dp"
-                android:layout_marginLeft="190dp"
+                android:gravity="right"
                 android:layout_toRightOf="@id/appicon"
                 android:textSize="13dp"
 
@@ -62,7 +62,7 @@
                         />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Loading Please wait.."
                         android:id="@+id/text"
@@ -71,15 +71,7 @@
                         android:layout_below="@+id/title"
                         android:layout_toRightOf="@id/appicon"
                         />
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="25dp"
-    android:text="DELETE"
-    android:layout_marginTop="5dp"
-    android:layout_marginLeft="25dp"
-    android:layout_below="@+id/text"
-    android:id="@+id/delete_btn"
-    android:background="#d32f2f"    android:visibility="gone"/>
+
 
         </RelativeLayout>
         </android.support.v7.widget.CardView>

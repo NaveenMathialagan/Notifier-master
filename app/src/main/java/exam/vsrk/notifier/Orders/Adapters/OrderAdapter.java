@@ -72,6 +72,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderViewHolder> {
             public void onClick(View view) {
                 DatabaseHandler db = new DatabaseHandler(mContext);
                 db.delete(cn.getItem());
+                //viewHolder.cardView.setVisibility(View.GONE);
                 viewHolder.item.setVisibility(View.GONE);
                 viewHolder.price.setVisibility(View.GONE);
                 viewHolder.quantity.setVisibility(View.GONE);

@@ -96,7 +96,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
         ItemViewHolder.ItemRate.setText(item.get(i).rs+" ");
         ItemViewHolder.ItemQty.setText(item.get(i).qty+" ");
-
+        ItemViewHolder.p.setEnabled(false);
+        ItemViewHolder.m.setEnabled(false);
         ItemViewHolder.p.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,63 +118,78 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
 
                 ItemViewHolder.cv.setOnClickListener(new View.OnClickListener() {
-                    int ch=0;
-                    int cc;
-                    @Override
-                    public void onClick(View v) {
-                        for(int k=0;k<stateList.size();k++) {
-                            if(stateList.get(k)==i) {
-                                cc=k;
-                                ch=1;
+
+
+                        int ch = 0;
+                        int cc;
+                        @Override
+                        public void onClick (View v){
+
+
+                        for (int k = 0; k < stateList.size(); k++) {
+                            if (stateList.get(k) == i) {
+                                cc = k;
+                                ch = 1;
+
+                            } else {
+                                ch = 0;
                             }
-                            else
-                                ch=0;
 
                         }
-                        if(ch==0)
-                        {
-                                Log.v("CLICKED_INDEX", item.get(i).iname);
-                                ItemViewHolder.cv.setCardBackgroundColor(Color.parseColor("#d32f2f"));
-                                color = Color.TRANSPARENT;
-                                Drawable background = ItemViewHolder.cv.getBackground();
-                                if (background instanceof ColorDrawable)
-                                    color = ((ColorDrawable) background).getColor();
-                                ItemViewHolder.ItemName.setTextColor(Color.WHITE);
-                                ItemViewHolder.ItemQty.setTextColor(Color.WHITE);
-                                ItemViewHolder.ItemRate.setTextColor(Color.WHITE);
-                                ItemViewHolder.rs.setTextColor(Color.WHITE);
-                                ItemViewHolder.qtytxt.setTextColor(Color.WHITE);
-                                Log.v("POSITION", String.valueOf(i));
-                                stateList.add(i);
+                        if (ch == 0) {
+                            ItemViewHolder.p.setEnabled(true);
+                            ItemViewHolder.m.setEnabled(true);
+                            Log.v("CLICKED_INDEX", item.get(i).iname);
+                            ItemViewHolder.cv.setCardBackgroundColor(Color.parseColor("#d32f2f"));
+                            color = Color.TRANSPARENT;
+                            Drawable background = ItemViewHolder.cv.getBackground();
+                            if (background instanceof ColorDrawable)
+                                color = ((ColorDrawable) background).getColor();
+                            ItemViewHolder.ItemName.setTextColor(Color.WHITE);
+                            ItemViewHolder.ItemQty.setTextColor(Color.WHITE);
+                            ItemViewHolder.ItemRate.setTextColor(Color.WHITE);
+                            ItemViewHolder.rs.setTextColor(Color.WHITE);
+                            ItemViewHolder.qtytxt.setTextColor(Color.WHITE);
+                            Log.v("POSITION", String.valueOf(i));
+                            stateList.add(i);
 
-                            }
-                        else
-                            {
-                                ItemViewHolder.cv.setCardBackgroundColor(Color.WHITE);
-                                color = Color.TRANSPARENT;
-                                Drawable background = ItemViewHolder.cv.getBackground();
-                                if (background instanceof ColorDrawable)
-                                    color = ((ColorDrawable) background).getColor();
-                                ItemViewHolder.ItemName.setTextColor(Color.BLACK);
-                                ItemViewHolder.ItemQty.setTextColor(Color.BLACK);
-                                ItemViewHolder.ItemRate.setTextColor(Color.BLACK);
-                                ItemViewHolder.rs.setTextColor(Color.BLACK);
-                                ItemViewHolder.qtytxt.setTextColor(Color.BLACK);
-                                Log.v("POSITION", String.valueOf(i));
-                                stateList.remove(cc);
+                        } if (ch==1){
 
-                            }
+                            ItemViewHolder.p.setEnabled(false);
+                            ItemViewHolder.m.setEnabled(false);
+                            ItemViewHolder.ItemQty.setText("1");
 
+                            ItemViewHolder.cv.setCardBackgroundColor(Color.WHITE);
+                            color = Color.TRANSPARENT;
+                            Drawable background = ItemViewHolder.cv.getBackground();
+                            if (background instanceof ColorDrawable)
+                                color = ((ColorDrawable) background).getColor();
+                            ItemViewHolder.ItemName.setTextColor(Color.BLACK);
+                            ItemViewHolder.ItemQty.setTextColor(Color.BLACK);
+                            ItemViewHolder.ItemRate.setTextColor(Color.BLACK);
+                            ItemViewHolder.rs.setTextColor(Color.BLACK);
+                            ItemViewHolder.qtytxt.setTextColor(Color.BLACK);
+                            Log.v("POSITION", String.valueOf(i));
+                                try {
+                                    stateList.remove(cc);
+                                }catch (Exception e){
+                                    Toast.makeText(c,"Go Back and Come",Toast.LENGTH_SHORT).show();
+                                }
 
+                        }
 
 
                     }
+
                 });
 
            ItemViewHolder.cartbutton.setOnClickListener(new View.OnClickListener() {
 
                @Override
                public void onClick(View view) {
+                   if (stateList.size()==0||stateList.isEmpty()){
+                       Toast.makeText(c,"Please Select the Item",Toast.LENGTH_LONG).show();
+                   }else{
                    for(int j=0;j<stateList.size();j++)
                    {
                        Log.v("MARKED_POS",String.valueOf(stateList.get(j)));
@@ -182,11 +198,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                        String QUANTITY= String.valueOf(item.get(stateList.get(j)).qty);
                        DatabaseHandler db=new DatabaseHandler(c);
                        db.addNotify(new Orders(ITEM_NAME,PRICE,QUANTITY));
-
-
-
                    }
                    Toast.makeText(c,"Items Added to Cart",Toast.LENGTH_LONG).show();
+               }
                }
            });
 
@@ -195,11 +209,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     @Override
     public int getItemCount() {
-        return item.size();
-    }
-    @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
+
+        return (null != item? item.size() : 0);
     }
 
 

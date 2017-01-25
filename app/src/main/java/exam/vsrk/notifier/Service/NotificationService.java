@@ -84,10 +84,7 @@ public class NotificationService extends NotificationListenerService {
 
 
         if (!app.equals("Instagram") && !app.equals("Chrome")
-                && !app.equals("Pages Manager")
-                && !app.equals("Clock")
                 && !app.equals("Google Play Music")
-                && !app.equals("Google Play Store")
                 && !app.equals("Volsbb Onetouch")
                 && !app.equals("Instagram")
                 && !app.equals("Assist")
@@ -101,25 +98,18 @@ public class NotificationService extends NotificationListenerService {
                 && !app.equals("Gmail")
                 && !app.equals("Google+")
                 && !app.equals("Phone")
-                && !app.equals("Android System")
                 && !app.equals("Android system")
                 && !app.equals("Android System WebView")
                 && !app.equals("BrowserMessage")
                 && !app.equals("Dialler")
                 && !app.equals("Phone")
                 && !app.equals("Maps")
-                && !app.equals("Facebook")
-                && !app.equals("Facebook Messenger")
-                && !app.equals("Messenger")
-                && !app.equals("Bluetooth Share")
-                ) {
+                && !app.equals("Facebook")) {
 
             String type = "app";
 
             db.addNotify(new Notify(pack, title, text, app, hour, minit, second, dat, month, year, type));
         } else if (app.equals("Twitter") ||
-                app.equals("Messenger")||
-                app.equals("Pages Manager")||
                 app.equals("Phone") ||
                 app.equals("Facebook Messenger") ||
                 app.equals("Facebook") ||
